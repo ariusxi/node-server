@@ -7,7 +7,7 @@ const express = require('express');
 
 //criando aplicação e definindo porta
 const app = express();
-const port = 3000;
+const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 //criando servidor
@@ -27,3 +27,18 @@ app.use('/', route);
 
 server.listen(port);
 console.log('API rodando na porta ' + port);
+
+//Função para verificar a porta disponivel e normaliza-la
+function normalizePort(val){
+    const port = parseInt(val, 10);
+
+    if(isNaN(port)){
+        return val;
+    }
+
+    if(port >= 0){
+        return port;
+    }
+
+    return false;
+}
