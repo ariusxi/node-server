@@ -3,10 +3,14 @@
 //Importando módulos
 const express = require('express');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 //Criando aplicação
 const app = express();
 const router = express.Router();
+
+//Conectando ao banco
+mongoose.connect('mongodb://admin:master123@ds018248.mlab.com:18248/nodestr');
 
 //Carregando as rotas
 const indexroute = require('./routes/index-route');
