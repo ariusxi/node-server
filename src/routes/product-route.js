@@ -2,33 +2,12 @@
 
 const express = require('express');
 const router = express.Router();
+//chamando o controllers
+const controller = require('../controllers/product-controller');
 
-//select
-router.get('/', (req, res, next) => {
-    res.status(200).send({
-        title: "Node Store API",
-        version: "0.0.2"
-    })
-});
-
-//insert
-router.post('/', (req, res, next) => {
-    res.status(201).send(req.body);
-});
-
-//update
-router.put('/:id', (req, res, next) => {
-    let id = req.params.id;
-    res.status(200).send({
-        id: id, 
-        item: req.body
-    });
-});
-
-//delete
-router.delete('/:id', (req, res, next) => {
-    let id = req.params.id;
-    res.status(200).send(req.body);
-});
+//definindo cada tipo de requisição
+router.post('/', controller.post);
+router.put('/:id', controller.put);
+router.delete('/', controller.delete);
 
 module.exports = router;
