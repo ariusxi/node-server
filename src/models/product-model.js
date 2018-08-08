@@ -27,8 +27,8 @@ const schema = new Schema({
     },
     active: {
         type: Boolean,
-        require: true,
-        default: true
+        required: true,
+        default: false
     },
     tags: [{
         type: String,
