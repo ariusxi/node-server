@@ -14,6 +14,8 @@ mongoose.connect('mongodb://admin:master123@ds018248.mlab.com:18248/nodestr');
 
 //Carregando Models
 const Product = require('./models/product-model');
+const Customer = require('./models/customer-model');
+const Order = require('./models/order-model');
 
 //Carregando as rotas
 const indexroute = require('./routes/index-route');
