@@ -2,7 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
-//chamando o controllers
+//chamando o controller
 const controller = require('../controllers/product-controller');
 
 //definindo cada tipo de requisição

@@ -3,11 +3,7 @@
 const mongoose = require('mongoose');
 const Customer = mongoose.model('Customer');
 
-exports.get = async() => {
-    
-}
-
-exports.create = async() =>  {
+exports.create = async(data) => {
     var customer = new Customer(data);
     await customer.save();
 }

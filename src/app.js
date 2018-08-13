@@ -20,6 +20,8 @@ const Order = require('./models/order-model');
 //Carregando as rotas
 const indexroute = require('./routes/index-route');
 const productroute = require('./routes/product-route');
+const customerroute = require('./routes/customer-route');
+const orderroute = require('./routes/order-route');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -27,6 +29,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //Atribuindo rota
 app.use('/', indexroute);
 app.use('/product', productroute);
+app.use('/customer', customerroute);
+app.use('/order', orderroute);
 
 //Exportando APP
 module.exports = app;
